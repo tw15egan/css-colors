@@ -1,0 +1,97 @@
+@import 'reset';
+
+* {
+  transition: 280ms all;
+  box-sizing: border-box;
+}
+
+body, html, #app, .colors__container {
+  font-family: "brandon-grotesque";
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.colors {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  &__text {
+    color: #fff;
+    font-size: 5rem;
+    -webkit-text-stroke: 1px #333;
+    text-shadow:
+        2px 2px 0 #333,
+        /* Simulated effect for Firefox and Opera
+           and nice enhancement for WebKit */
+       -1px -1px 0 #333,  
+        1px -1px 0 #333,
+       -1px  1px 0 #333,
+        1px  1px 0 #333;
+  }
+  
+  &__text,
+  &::before {
+    font-weight: 700;
+    opacity: 1;
+    letter-spacing: 1px;
+  }
+  
+  &::before {
+    content: 'CSS Color Names';
+    display: inline-block;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: .75;
+  }
+  
+  &__arrow--right {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    img {
+      margin-left: 2rem;
+      width: 50px;
+      transform: rotateY(180deg);
+ 
+      &:hover {
+        transform: scale(1.2) rotateY(180deg);
+      }
+    }
+    
+    &::before {
+      position: absolute;
+      display: inline-block;
+      min-width: 200px;
+      text-align: right;
+      content: 'Hit a key or click here';
+      right: calc(2rem + 30px);
+      top: 1rem;
+      width: auto;
+      margin: auto;
+      opacity: .75;
+    }
+  }
+}
+.social {
+ position: absolute;
+ bottom: 1rem;
+ left: 1rem;
+  
+ img {
+   height: 25px;
+   width: 25px;
+   margin-right: .5rem;
+   
+   &:hover {
+     transform: scale(1.3);
+   }
+  }
+}
